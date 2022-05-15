@@ -1,8 +1,7 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import Main from './Main'
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <div>
       <Head>
