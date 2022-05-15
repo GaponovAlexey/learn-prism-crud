@@ -1,5 +1,7 @@
 const Main = () => {
-  return <div>hi</div>
+  return <div>
+    start
+  </div>
 }
 
 export default Main
