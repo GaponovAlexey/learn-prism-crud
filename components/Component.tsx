@@ -1,13 +1,20 @@
-import { NextPage } from 'next'
-import { useEffect } from 'react'
+import { FC } from 'react'
+import { Props } from '../pages'
+export interface user {
+  id: number
+  name: string
+  email: string
+  map: any
+}
 
-const Component: NextPage = ({ data }: any) => {
-  console.log('user', data)
+const Component: FC<Props> = ({ data }) => {
 
   return (
     <div>
       start
-      {data.map((el) => (<div key={el.id}>{el.name}</div>))}
+      {data.map((el: user) => (
+        <div key={el.id}>{el.name}</div>
+      ))}
     </div>
   )
 }
