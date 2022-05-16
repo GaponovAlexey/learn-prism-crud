@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import Component from './Component'
+import Component from '../components/Component'
 
 const Home = () => {
   return (
