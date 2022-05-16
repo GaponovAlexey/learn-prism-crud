@@ -5,7 +5,11 @@ const VueForm: FC = ({ data }: any) => {
     <div>
       <h1>Vue Form Data</h1>
       {data.map((item: any) => (
-        <div>{item.name}</div>
+        <div>
+          {item.name}
+          <br />
+          {item.email}
+        </div>
       ))}
     </div>
   )
