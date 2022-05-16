@@ -16,7 +16,7 @@ const Component: NextPage = ({ data }: any) => {
 export default Component
 
 export const getStaticProps: GetStaticProps = async () => {
-  // const res = await fetch('http://localhost:3000/api')
-  // const data = await res.json()
-  return { props: { data: 'text' } }
+  const res = await fetch('http://localhost:3000/api')
+  const data = await res.json()
+  return { props: { data } }
 }
