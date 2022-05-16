@@ -7,7 +7,7 @@ const Component: NextPage = ({ data }: any) => {
     <div>
       start
       {data?.map((item: any) => {
-        return <div>{item.name}</div>
+        return <div key={item.name}>{item.name}</div>
       })}
     </div>
   )
