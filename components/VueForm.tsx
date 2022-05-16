@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { user } from './Component'
 
-const VueForm: FC<user> = ({ data }: any) => {
+const VueForm: FC = ({ data }: any) => {
   const deleteData = async (id: number) => {
     const res = await fetch(`http://localhost:3000/api/delete/${id}`, {
       method: 'DELETE',
