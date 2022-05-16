@@ -12,7 +12,7 @@ export default async function index(req: NextApiRequest, res: NextApiResponse) {
     res.status(200).json({ user })
   } catch (error) {
     res.status(500)
-    res.json({ error: error.message })
+    res.json({ error: 'Error' })
     console.error(error)
   } finally {
     await prisma.$disconnect()
