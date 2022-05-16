@@ -1,19 +1,23 @@
-import { PrismaClient } from '@prisma/client'
 
 const Main = ({ data }: any) => {
   console.log(data)
-  
-  return <div>start</div>
+
+  return (
+    <div>
+      start
+      {data?.map((item: any) => {
+        return <div>{item.name}</div>
+      })}
+    </div>
+  )
 }
 
 export default Main
 
-export const getServerSideProps = async () => {
-  const prisma = new PrismaClient()
-  const data = await prisma.user.findMany()
+export const getStaticProps = async () => {
+  const res = await fetch('http://localhost:3000/api')
+  const data = await res.json()
   return {
-    props: {
-      data: data,
-    },
+    props: { data },
   }
 }
