@@ -18,5 +18,5 @@ export default Component
 export const getStaticProps: GetStaticProps = async () => {
   // const res = await fetch('http://localhost:3000/api')
   // const data = await res.json()
-  return { props: { ...data: 'text' } }
+  return { props: { data: 'text' } }
 }
