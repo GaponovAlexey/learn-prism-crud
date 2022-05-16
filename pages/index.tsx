@@ -1,8 +1,8 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Component from '../components/Component'
 
-const Home = () => {
+const Home = ({data}:any) => {
   return (
     <div>
       <Head>
@@ -16,12 +16,23 @@ const Home = () => {
           rel='stylesheet'
         />
       </Head>
-      <Component />
-      {/* <div className='text-3xl font-bold text-red-500'> */}
-      {/* <Main /> */}
-      {/* </div> */}
+      <div className='text-3xl font-bold text-red-500'>
+      <Component data={data}  />
+      </div>
     </div>
   )
 }
 
 export default Home
+
+
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const res = await fetch('http://localhost:3000/api')
+  const data = await res.json()
+  return {
+    props: {
+      data,
+    },
+  }
+}

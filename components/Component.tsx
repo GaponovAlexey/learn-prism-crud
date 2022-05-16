@@ -1,22 +1,15 @@
-import { GetStaticProps, NextPage } from "next"
+import { NextPage } from 'next'
+import { useEffect } from 'react'
 
 const Component: NextPage = ({ data }: any) => {
   console.log('user', data)
-  
+
   return (
     <div>
       start
-      {data?.map((item: any) => {
-        return <div key={item.name}>{item.name}</div>
-      })}
+      {data.map((el) => (<div key={el.id}>{el.name}</div>))}
     </div>
   )
 }
 
 export default Component
-
-export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('http://localhost:3000/api')
-  const data = await res.json()
-  return { props: { data } }
-}
