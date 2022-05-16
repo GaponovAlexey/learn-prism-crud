@@ -14,10 +14,10 @@ const Component: FC<Props> = ({ data }) => {
   return (
     <div className='max-w-[800px] '>
       <div className='flex justify-between '>
-        <div className='min-w-[220px]'>
+        <div className='min-w-[250px]'>
           <VueForm data={data} />
         </div>
-        <div className='border min-h-[300px]'></div>
+        <div className='border min-h-[350px]'></div>
         <div>
           <AddForm />
         </div>

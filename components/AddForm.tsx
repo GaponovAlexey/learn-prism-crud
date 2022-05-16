@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { ChangeEvent, FC, MouseEvent, useState } from 'react'
 
-const AddForm = () => {
+const AddForm: FC = () => {
   const [name, setname] = useState('')
   const [email, setemail] = useState('')
 
-  const sendData = async () => {
-    const res = await fetch('http://localhost:3000/api', {
+  const sendData = async (name: string, email: string) => {
+    const res = await fetch('http://localhost:3000/api/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -17,11 +17,16 @@ const AddForm = () => {
     })
   }
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault()
-    setname('')
-    setemail('')
-    sendData(name, email)
+  
+  const handleSubmit = (e: MouseEvent) => {
+    if (name === '' || email === '') {
+      alert('Please fill all the fields')
+    } else {
+      e.preventDefault()
+      setname('')
+      setemail('')
+      sendData(name, email)
+    }
   }
 
   return (
